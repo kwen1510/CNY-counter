@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Year of the Dragon Counter</title>
+<style>
+  body {
+    background-color: #ff3333; /* Red theme */
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  #counter {
+    font-size: 48px;
+    margin: 20px;
+  }
+  button {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #660000; /* Darker red */
+    color: white;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .centered {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="centered">
+  <h1>Dragon Counter</h1>
+  <img src="path_to_your_image.jpg" alt="Dragon" style="max-width:300px;"/>
+  <div id="counter">0</div>
+  <button id="resetButton">Reset</button>
+</div>
+
+<script>
+  let count = 0;
+  
+  // Function to increase the counter
+  function increaseCounter() {
+    count++;
+    document.getElementById('counter').innerText = count;
+  }
+  
+  // Function to reset the counter
+  function resetCounter() {
+    count = 0;
+    document.getElementById('counter').innerText = count;
+  }
+  
+  // Event listener for keypress
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 32) { // 32 is the key code for the space bar
+      increaseCounter();
+    }
+  }
+  
+  // Event listener for reset button
+  document.getElementById('resetButton').addEventListener('click', resetCounter);
+</script>
+
+</body>
+</html>
